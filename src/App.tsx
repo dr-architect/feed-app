@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, FC } from 'react';
+import './style.scss';
+import { FeedsList } from './components/Feed/FeedsList';
+import { IconContext } from 'react-icons';
+import { FeedsContext } from './contexts/feed-context';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: FC = () => {
+    const { feeds , updateState } = useContext(FeedsContext);
+    const feedsData = feeds || [];
+    return (
+        <IconContext.Provider value={{ color: '#999999', size: '0.75em', className: 'fa-icon' }}>
+            <div className="main">
+                <FeedsList items={feedsData} />
+            </div>
+        </IconContext.Provider>
+    );
+};
 
 export default App;

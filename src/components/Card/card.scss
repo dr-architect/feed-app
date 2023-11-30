@@ -1,0 +1,17 @@
+
+$card: #f6f6f6;
+
+$text-main: #949494;
+$text-second: #949494;
+$text-accent: #29b3d3;
+
+.card {
+  display: flex;
+  width: 100%;
+  text-align: start;
+  flex-flow: column;
+  border-radius: 3px;
+  background-color: $card;
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+}
